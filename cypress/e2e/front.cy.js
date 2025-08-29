@@ -1,4 +1,3 @@
-
 beforeEach(() => {
         cy.visit(Cypress.config('baseUrl'))
 });
@@ -13,13 +12,14 @@ describe('Login invalido', () => {
   })
 })
 
+//deve alterar o email a cada vez que rodar o teste
 describe('Cadastro de um Novo Usuário', () => {
   it('Deve cadastrar um novo usuário', () => {
 
     cy.get('[data-testid="cadastrar"]').click()
-    cy.get('[data-testid="nome"]').type('usertest4')
-    cy.get('[data-testid="email"]').type('teste@test4.com')
-    cy.get('[data-testid="password"]').type('teste4')
+    cy.get('[data-testid="nome"]').type('Fulano')
+    cy.get('[data-testid="email"]').type('fulano2@qa.com')
+    cy.get('[data-testid="password"]').type('teste')
     cy.get('[data-testid="cadastrar"]').click()
     // Valida mensagem de sucesso
     cy.contains('Cadastro realizado com sucesso').should('be.visible')
